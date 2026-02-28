@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Clinic Management System Design System
+   Medical-grade aesthetic with trust-inspiring teal primary
+   All colors in HSL format */
+
+@layer base {
+  :root {
+    /* Core backgrounds - Aligned with Marketing Grayscale (OKLCH raw) */
+    --background: 1 0 0;
+    --foreground: 0.145 0 0;
+
+    /* Cards and surfaces */
+    --card: 1 0 0;
+    --card-foreground: 0.145 0 0;
+
+    /* Popovers and dropdowns */
+    --popover: 1 0 0;
+    --popover-foreground: 0.145 0 0;
+
+    /* Primary - Preserving Medical Teal (HSL raw) */
+    --primary: 174 62% 38%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary/Muted - Grayscale transition */
+    --secondary: 0.97 0 0;
+    --secondary-foreground: 0.205 0 0;
+    --muted: 0.97 0 0;
+    --muted-foreground: 0.556 0 0;
+
+    /* Accent - Unified with Marketing */
+    --accent: 0.97 0 0;
+    --accent-foreground: 0.205 0 0;
+
+    /* Destructive - Medical safety red (HSL raw) */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Borders and inputs - Precise alignment */
+    --border: 0.922 0 0;
+    --input: 0.922 0 0;
+    --ring: 0.708 0 0;
+
+    /* Physicality - 10px / 0.625rem radius */
+    --radius: 0.625rem;
+
+    /* Status colors - PRESERVED for functional clarity */
+    --status-pending: 38 92% 50%;
+    --status-pending-foreground: 38 92% 15%;
+    --status-pending-bg: 38 92% 96%;
+
+    --status-confirmed: 142 71% 45%;
+    --status-confirmed-foreground: 142 71% 15%;
+    --status-confirmed-bg: 142 71% 96%;
+
+    --status-cancelled: 0 72% 51%;
+    --status-cancelled-foreground: 0 72% 15%;
+    --status-cancelled-bg: 0 72% 97%;
+
+    --status-postponed: 217 91% 60%;
+    --status-postponed-foreground: 217 91% 15%;
+    --status-postponed-bg: 217 91% 97%;
+
+    /* Sidebar - Integration of systems */
+    --sidebar-background: 222 47% 11%;
+    --sidebar-foreground: 210 40% 88%;
+    --sidebar-primary: 174 62% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 222 47% 18%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 222 47% 18%;
+    --sidebar-ring: 174 62% 45%;
+
+    /* Chart colors */
+    --chart-1: 174 62% 38%;
+    --chart-2: 217 91% 60%;
+    --chart-3: 142 71% 45%;
+    --chart-4: 38 92% 50%;
+    --chart-5: 280 65% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Geist', sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  .status-badge {
+    @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium;
+  }
+
+  .status-pending {
+    background-color: hsl(var(--status-pending-bg));
+    color: hsl(var(--status-pending-foreground));
+  }
+
+  .status-confirmed {
+    background-color: hsl(var(--status-confirmed-bg));
+    color: hsl(var(--status-confirmed-foreground));
+  }
+
+  .status-cancelled {
+    background-color: hsl(var(--status-cancelled-bg));
+    color: hsl(var(--status-cancelled-foreground));
+  }
+
+  .status-postponed {
+    background-color: hsl(var(--status-postponed-bg));
+    color: hsl(var(--status-postponed-foreground));
+  }
+
+  .period-header {
+    @apply flex items-center gap-2 px-4 py-3 bg-muted/50 border-b border-border font-medium text-sm text-muted-foreground;
+  }
+}
